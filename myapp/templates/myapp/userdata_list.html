@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Users list</title>
+ </head>   
+<body>
+<ul>
+{% for member in object_list %}
+ <li>{{member.name}}</li>                                                                                                                         
+{%endfor%}
+</ul>
+</body>
+</html>

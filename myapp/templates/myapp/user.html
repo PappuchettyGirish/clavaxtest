@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Testing </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    </head>
+<body>
+    <div class="container">
+        <div class="row">
+  <div class="col-md-3">
+  </div>
+<div class="col-md-4">
+    {%for i in user%}
+    <p>Name : {{i.name}}</p>
+    <p>Userame : {{i.username}}</p>
+    <p>Image : </p><img src="{{i.image.url}}" >
+    {%endfor%}
+</div>
+<div class=col-md-3>
+<form method='POST' action="/logout/" >
+	{% csrf_token %}
+	<input style="float:right;" type="submit" value="LOGOUT"/>
+</form>
+</div>
+        </div>
+    </div>
+</body>
+</html>
